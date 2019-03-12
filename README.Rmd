@@ -12,24 +12,28 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
+
 # IntegrativeFPM
 
-The goal of IntegrativeFPM is to 
-Implement integrative analyses for the finite population mean parameters
+The goal of *IntegrativeFPM* is to 
+implement integrative analyses for the finite population mean parameters
 combining a non-probability sample with a probability sample which provides
 high-dimensional representative covariate information of the target population.
 
-The non-probability sample contains observations on (X,Y); however, the sampling mechanism is unknown.
-On the other hand, although the probability sample with sampling weights represents
-the finite population, it contains observations only on X.
+Two datasets
 
-The function "IntegrativeFPM" implements a two-step approach for integrating the probability sample
+* The non-probability sample contains observations on (X,Y); however, the sampling mechanism is unknown. 
+
+* The probability sample with sampling weights represents
+the finite population; however, it contains observations only on X.
+
+The function *IntegrativeFPM* implements a two-step approach for integrating the probability sample
 and the nonprobability sample for finite population inference.
 
-The first step selects important variables in the sampling score model and
+* Step 1 selects important variables in the sampling score model and
 the outcome model by penalization.
 
-The second step conducts a doubly robust inference for the finite population
+* Step 2 conducts a doubly robust inference for the finite population
 mean of interest. In this step, the nuisance model parameters are refitted based on the selected variables
 by minimizing the asymptotic squared bias of the doubly robust estimator.
 This estimating strategy mitigates the possible first-step selection error and
@@ -42,7 +46,7 @@ or the outcome model is correctly specified.
 devtools::install_github("shuyang1987/IntegrativeFPM")
 ```
 
-### Main Paper: Yang, Kim and Song (2019) 
+### Main Paper: Yang, Kim, and Song (2019) 
 
 Yang, S., Kim, J.K., and Song, R. (2019). Doubly Robust Inference when Combining Probability and Non-probability Samples with High-dimensional Data.
 
@@ -50,7 +54,7 @@ Yang, S., Kim, J.K., and Song, R. (2019). Doubly Robust Inference when Combining
 
 ## Example
 
-This is a basic example:
+This is an example for illustration.
 
 ```{r example}
 
@@ -119,10 +123,10 @@ lambda_b <- 0.25
 lambda2_b <- 0.02
 
 true
-IntegrativeFPM(y=y.AB, x=x.AB, deltaB, sw, family="gaussian",lambda_a, cv_a=0, lambda_b, cv_b=0)
+IntegrativeFPM::IntegrativeFPM(y=y.AB, x=x.AB, deltaB, sw, family="gaussian",lambda_a, cv_a=0, lambda_b, cv_b=0)
 
 true2
-IntegrativeFPM(y=y2.AB, x=x.AB, deltaB, sw, family="binomial",lambda_a, cv_a=0, lambda2_b, cv_b=0)
+IntegrativeFPM::IntegrativeFPM(y=y2.AB, x=x.AB, deltaB, sw, family="binomial",lambda_a, cv_a=0, lambda2_b, cv_b=0)
 
 
 ```
