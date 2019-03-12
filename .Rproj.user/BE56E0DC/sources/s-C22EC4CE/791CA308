@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1068074332",
+    "hash" : "0",
     "id" : "791CA308",
-    "lastKnownWriteTime" : 1552420170,
-    "last_content_update" : 1552420170734,
+    "lastKnownWriteTime" : 1552420253,
+    "last_content_update" : 1552420253307,
     "path" : "~/IntegrativeFPM/README.Rmd",
     "project_path" : "README.Rmd",
     "properties" : {
-        "cursorPosition" : "161,0",
-        "scrollLine" : "138"
+        "cursorPosition" : "18,66",
+        "scrollLine" : "9"
     },
     "read_only" : false,
     "read_only_alternatives" : [

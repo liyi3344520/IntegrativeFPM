@@ -4,9 +4,9 @@
 # IntegrativeFPM
 
 The goal of *IntegrativeFPM* is to implement integrative analyses for
-the finite population mean parameters combining a non-probability sample
-with a probability sample which provides high-dimensional representative
-covariate information of the target population.
+the finite population mean (FPM) parameters combining a non-probability
+sample with a probability sample which provides high-dimensional
+representative covariate information of the target population.
 
 Two datasets
 
