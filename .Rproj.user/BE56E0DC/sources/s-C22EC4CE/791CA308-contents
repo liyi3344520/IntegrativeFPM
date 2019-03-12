@@ -52,6 +52,39 @@ Yang, S., Kim, J.K., and Song, R. (2019). Doubly Robust Inference when Combining
 
 
 
+### Usage
+
+IntegrativeFPM(y, x, deltaB, sw, family, lambda_a, cv_a, lambda_b, cv_b)
+
+### Arguments
+
+Argument  | 
+------------- | -------------
+y	|is a vector of outcome; NA for the probability sample (n x 1)
+x	| is a matrix of covariates without intercept (n x p)
+deltaB|	is a vector of the binary indicator of belonging to the nonprobability sample; i.e., 1 if the unit belongs to the nonprobability sample, and 0 otherwise (n x 1)
+sw |is a vector of weights: 1 for the unit in the nonprobability sample and the design weight for the unit in the probability sample (n x 1)
+family	|specifies the outcome model
+-- |"gaussian": a linear regression model for the continuous outcome
+-- |"binomial": a logistic regression model for the binary outcome
+lambda_a|	is a scalar tuning parameter in the penalized estimating equation for alpha (the sampling score parameter)
+-- |The sampling score is a logistic regression model for the probability of selection into the nonprobability sample given X
+cv_a	|is a flag for using cross validation for choosing lambda_a
+lambda_b|	is a scalar tuning parameter in the penalized estimation for beta (the outcome model parameter)
+--  |The outcome model is a linear regression model for continuous outcome or a logistic regression model for binary outcome
+cv_b	| is a flag for using cross validation for choosing lambda_b
+
+
+### Value
+
+ | 
+------------- | -------------
+est|  estimate of the finite population mean of Y
+se|  standard error estimate for est
+alpha.selected|  the column(s) of X selected for the sampling score model
+beta.selected|  the column(s) of X selected for the outcome model
+
+
 ## Example
 
 This is an example for illustration.
