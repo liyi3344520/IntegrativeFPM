@@ -202,7 +202,7 @@ IntegrativeFPM <- function(y, x, deltaB, sw, family, lambda_a, cv_a, lambda_b, c
     ## Step 2: joint ee
     ##################################################
 
-    Cindex<- unique(beta.selected[-1]-1,alpha.selected[-1]-1)
+    Cindex<- unique( c(beta.selected[-1]-1,alpha.selected[-1]-1) )
     pjee<-length(Cindex)
     x.ABC<-x.AB[,Cindex]
 
